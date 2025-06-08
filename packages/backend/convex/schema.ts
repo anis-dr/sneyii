@@ -13,11 +13,6 @@ export default defineSchema({
     role: v.union(v.literal("user"), v.literal("admin")),
   }).index("by_token", ["tokenIdentifier"]),
 
-  todos: defineTable({
-    text: v.string(),
-    completed: v.boolean(),
-  }),
-
   occupations: defineTable({
     name: v.string(),
     description: v.string(),

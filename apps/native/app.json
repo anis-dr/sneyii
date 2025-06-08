@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "my-better-t-app",
-    "slug": "my-better-t-app",
+    "name": "sneyii",
+    "slug": "sneyii",
     "version": "1.0.0",
-    "scheme": "my-better-t-app",
+    "scheme": "sneyii",
     "web": {
       "bundler": "metro",
       "output": "static",
