@@ -9,11 +9,11 @@ import {
 import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "../global.css";
-import { NAV_THEME } from "@/lib/constants";
+import { NAV_THEME } from "~/lib/constants";
 import React, { useRef } from "react";
-import { useColorScheme } from "@/lib/use-color-scheme";
+import { useColorScheme } from "~/lib/use-color-scheme";
 import { Platform } from "react-native";
-import { setAndroidNavigationBar } from "@/lib/android-navigation-bar";
+import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
 import * as SecureStore from "expo-secure-store";
 import { ConvexAuthProvider } from "@convex-dev/auth/react";
 
@@ -42,7 +42,7 @@ const secureStorage = {
 
 export default function RootLayout() {
   const hasMounted = useRef(false);
-  const { colorScheme, isDarkColorScheme } = useColorScheme();
+  let { colorScheme, isDarkColorScheme } = useColorScheme();
   const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false);
 
   useIsomorphicLayoutEffect(() => {
@@ -61,6 +61,7 @@ export default function RootLayout() {
   if (!isColorSchemeLoaded) {
     return null;
   }
+
   return (
     <ConvexAuthProvider
       client={convex}
